@@ -1,4 +1,5 @@
-const express= require('express');
+//const express= require('express');
+import express from 'express';
 const app = express()
 app.get('/',(req,res)=>{
     console.log('hello fromm the express app ')
@@ -8,4 +9,5 @@ app.get('/',(req,res)=>{
 })
 
 
-module.exports = app;
+//module.exports = app;
+export default app
