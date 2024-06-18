@@ -2,6 +2,7 @@ import {Router}from 'express'
 const router =Router()
 //Product 
 router.get ('/product',(req,res)=>{
+    res.json({message:'hello hanine '})
 
 })
 router.get('/product/:id',(req,res)=>{
