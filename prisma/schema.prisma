@@ -28,4 +28,36 @@ model Product {
   name        String   @db.VarChar(255)
   belongsToId String
   belongsTo   User     @relation(fields: [belongsToId], references: [Id])
+
+  Update Update[]
+}
+
+enum Update_Status {
+  In_Progress
+  Shipped
+  Deprecated
+}
+
+model Update {
+  Id          String        @id @default(uuid())
+  CreatedAt   DateTime      @default(now())
+  UpdateAt    DateTime
+  version     String?
+  title       String
+  body        String
+  asset       String?
+  status      Update_Status @default(In_Progress)
+  ProductId   String
+  product     Product       @relation(fields: [ProductId], references: [Id])
+  updatePoints updatePoint[]
+}
+
+model updatePoint {
+  Id          String   @id @default(uuid())
+  CreatedAt   DateTime @default(now())
+  UpdateAt    DateTime
+  name        String   @db.VarChar(255)
+  description String
+  UpadateId   String
+  update      Update   @relation(fields: [UpadateId], references: [Id])
 }
