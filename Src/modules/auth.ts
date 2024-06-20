@@ -23,17 +23,17 @@ export const protect=(req,res,next)=>{
         res.json({message:'Invalide Token'})
         }
 //verify the token 
-try{
+    try{
 const payload =jwt.verify(token ,process.env.JWT_SECRET)
 req.user=payload
 console.log(payload);
 next()
-}
-catch(e){
+    }
+    catch(e){
     //get information about the error
     console.error(e)
     res.status(401)
     res.json({message:'invalid'})
-}
+            }
 
 }
