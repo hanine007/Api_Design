@@ -19,6 +19,7 @@ export const Createjwt=(User)=>{
         process.env.JWT_SECRET)
         return token
 } 
+//verify 
 export const protect=(req,res,next)=>{
     //check if they have the authorzation 
     const bearer= req.headers.authorization;
