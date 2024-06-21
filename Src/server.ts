@@ -4,6 +4,8 @@ import express from 'express';
 import router from './route';
 import morgan from 'morgan'
 import { protect } from './modules/auth';
+import { CreateNewUser, signin } from './handlers/user';
+import { sign } from 'crypto';
 
 const app = express()
 app.use (morgan('dev'))
@@ -18,7 +20,8 @@ app.get('/',(req,res)=>{
 
 app.use('/api',protect,router)
 
-
+app.post('/user',CreateNewUser)
+app.post('/signin',signin)
 
 
 
