@@ -1,5 +1,6 @@
+import { create } from 'domain'
 import prisma from '../db'
-import { hashPassword } from '../modules/auth'
+import { Createjwt, hashPassword } from '../modules/auth'
 export const CreateNewUser= async(req,res)=>{
 const user =await prisma.user.create({
     data:{
@@ -8,4 +9,7 @@ const user =await prisma.user.create({
 
     }
 })
+//assign a token a new user create
+const token = Createjwt(user)
+res.json ({token})
 }
