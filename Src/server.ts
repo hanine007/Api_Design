@@ -17,9 +17,9 @@ app.get('/',(req,res)=>{
    // res.json({message:'hanine'})
     res.send('Hello World');
 })
-
+//
 app.use('/api',protect,router)
-
+// Create and sigin
 app.post('/user',CreateNewUser)
 app.post('/signin',signin)
 
