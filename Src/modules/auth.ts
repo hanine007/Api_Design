@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
-
+//paasword
 export const comparePassword =(Password,hash)=>{
     return bcrypt.compare(Password,hash)
 }
@@ -8,7 +8,7 @@ export const hashPassword =(Password)=>{
     return bcrypt.hash(Password,5)
 }
 
-
+//jwt
 export const Createjwt=(User)=>{
 
     const token =jwt.sign ({
@@ -37,7 +37,7 @@ export const protect=(req,res,next)=>{
 //verify the token 
     try{
 const payload =jwt.verify(token ,process.env.JWT_SECRET)
-req.user=payload
+req.User=payload
 console.log(payload);
 next()
     }
