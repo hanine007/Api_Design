@@ -1,4 +1,5 @@
 import {Router}from 'express'
+import {body, validationResult} from 'express-validator'
 const router =Router()
 //Product 
 router.get ('/product',(req,res)=>{
@@ -9,8 +10,13 @@ router.get('/product/:id',(req,res)=>{
 
 }) 
 //modify product
-router.put ('/product/:id',(req,res)=>{
-
+router.put ('/product/:id',body("name"),(req,res)=>{
+    //validationResult contain all the error validation 
+const errors= validationResult(req)
+if (!errors.isEmpty()){
+    res.status (400)
+    res.json({error:errors.array()})
+}
 })
 router.post('/product',(req,res)=>{
 
