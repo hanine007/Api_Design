@@ -61,7 +61,7 @@ List of technologies and tools used in the project:
 
 
 ```bash
-$ npm start
+$ npm run dev
 ```
 
 
