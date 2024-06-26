@@ -24,3 +24,13 @@ const product = await prisma.product.findFirst({
 });
 res.json({data:product})
 }
+//Create a Product 
+export const Createproduct =async (req,res)=>{
+    const product =await prisma.product.create({
+        data:{
+            name:req.body.name,
+            belongsToId:req.user.Id
+    
+        }
+    })
+}
