@@ -29,7 +29,8 @@ router.get("/update/:id",
 (req, res) => {});
 
 router.post("/update", 
-
+body('title').exists().isString(),
+body('body').exists().isString(),
 (req, res) => {});
 
 router.put("/update/:id", 
@@ -46,9 +47,16 @@ router.get("/updatepoint", (req, res) => {});
 
 router.get("/updatepoint/:id", (req, res) => {});
 
-router.post("/updatepoint", handleInputEroor,(req, res) => {});
+router.post("/updatepoint",
+body('name').optional().isString(),
+body('description').optional().isString(),
+body ('UpadateId').exists().isString(),
+(req, res) => {});
 
-router.put("/updatepoint/:id", handleInputEroor,(req, res) => {});
+router.put("/updatepoint/:id", 
+body('name').optional().isString(),
+body('description').optional().isString(),
+(req, res) => {});
 
 router.delete("/updatepoint/:id", (req, res) => {});
 
