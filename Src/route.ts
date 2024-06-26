@@ -1,5 +1,5 @@
 import {Router}from 'express'
-import {body, validationResult} from 'express-validator'
+import {body,  oneOf, validationResult } from 'express-validator'
 import { handleInputEroor } from './modules/handdler'
 import { version } from 'os'
 const router =Router()
@@ -24,13 +24,15 @@ router.delete('/product/:id',(req,res)=>{
 //Update 
 router.get("/update", (req, res) => {});
 
-router.get("/update/:id", (req, res) => {});
+router.get("/update/:id", 
+ body('title').optional(),
+body ('version').optional(),
+body('body').optional(),
+body('status').isIn(['In_Progress', 'Shipped', 'Deprecated']),
+(req, res) => {});
 
 router.post("/update", 
-body("title").optional,
-body("body").optional,
-body("status").optional,
-body("version").optional,
+
 (req, res) => {});
 
 router.put("/update/:id", handleInputEroor,(req, res) => {});
