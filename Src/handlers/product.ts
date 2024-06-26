@@ -34,3 +34,15 @@ export const Createproduct =async (req,res)=>{
         }
     })
 }
+//Update a Product 
+export const updateProduct =async (req,res)=>{
+    const update=await prisma.product.update({
+        where:{
+            Id:req.params.id
+        },
+        data:{
+            name:req.body.name
+        }
+    })
+    res.json({data:update})    
+}
