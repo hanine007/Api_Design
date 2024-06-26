@@ -1,6 +1,6 @@
 import { validationResult } from "express-validator"
 export const handleInputEroor=(req,res,next)=>{
-    //validation error conatain all the error validation 
+    //validation Result conatain all the error validation 
     const errors= validationResult(req)
 if (!errors.isEmpty()){
     res.status (400)
