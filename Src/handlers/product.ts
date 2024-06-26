@@ -14,7 +14,7 @@ export const getProducts = async(req,res)=>{
     res.json({ data: User.Products }); 
 }
 //get one product 
-const getone = async(req,res)=>{
+export const getone = async(req,res)=>{
 const Id = req.params.id
 const product = await prisma.product.findFirst({
     where: {
