@@ -25,17 +25,18 @@ router.delete('/product/:id',(req,res)=>{
 router.get("/update", (req, res) => {});
 
 router.get("/update/:id", 
- body('title').optional(),
-body ('version').optional(),
-body('body').optional(),
-body('status').isIn(['In_Progress', 'Shipped', 'Deprecated']),
+ 
 (req, res) => {});
 
 router.post("/update", 
 
 (req, res) => {});
 
-router.put("/update/:id", handleInputEroor,(req, res) => {});
+router.put("/update/:id", 
+body('title').optional(),
+body ('version').optional(),
+body('body').optional(),
+body('status').isIn(['In_Progress', 'Shipped', 'Deprecated']),(req, res) => {});
 
 router.delete("/update/:id", (req, res) => {});
 
