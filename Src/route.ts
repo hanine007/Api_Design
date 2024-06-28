@@ -2,9 +2,10 @@ import {Router}from 'express'
 import {body,  oneOf, validationResult } from 'express-validator'
 import { handleInputEroor } from './modules/handdler'
 import { version } from 'os'
+import { Createproduct, getProducts } from './handlers/product'
 const router =Router()
 //Product 
-router.get ('/product',(req,res)=>{
+router.get ('/product',getProducts,(req,res)=>{
     res.json({message:'hello hanine '})
 
 })
@@ -15,7 +16,7 @@ router.get('/product/:id',(req,res)=>{
 router.put ('/product/:id',body("name"),handleInputEroor,(req,res)=>{
 
 })
-router.post('/product',body("name"),handleInputEroor,(req,res)=>{
+router.post('/product',body("name"),handleInputEroor,Createproduct,(req,res)=>{
 
 })
 router.delete('/product/:id',(req,res)=>{
