@@ -2,7 +2,7 @@ import {Router}from 'express'
 import {body,  oneOf, validationResult } from 'express-validator'
 import { handleInputEroor } from './modules/handdler'
 import { version } from 'os'
-import { Createproduct, getProducts, getone } from './handlers/product'
+import { Createproduct, deleteproduct, getProducts, getone } from './handlers/product'
 const router =Router()
 //Product 
 router.get ('/product',getProducts,(req,res)=>{
@@ -19,7 +19,7 @@ router.put ('/product/:id',body("name"),handleInputEroor,(req,res)=>{
 router.post('/product',body("name"),handleInputEroor,Createproduct,(req,res)=>{
 
 })
-router.delete('/product/:id',(req,res)=>{
+router.delete('/product/:id',deleteproduct,(req,res)=>{
 
 })
 //Update 
