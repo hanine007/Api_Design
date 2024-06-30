@@ -2,14 +2,14 @@ import {Router}from 'express'
 import {body,  oneOf, validationResult } from 'express-validator'
 import { handleInputEroor } from './modules/handdler'
 import { version } from 'os'
-import { Createproduct, getProducts } from './handlers/product'
+import { Createproduct, getProducts, getone } from './handlers/product'
 const router =Router()
 //Product 
 router.get ('/product',getProducts,(req,res)=>{
     res.json({message:'hello hanine '})
 
 })
-router.get('/product/:id',(req,res)=>{
+router.get('/product/:id',getone,(req,res)=>{
 
 }) 
 //modify product
