@@ -21,7 +21,7 @@ const product = await prisma.product.findFirst({
         Id,
         belongsToId: req.user.Id
     }
-});
+});//Cela assure que seul le produit //appartenant à l'utilisateur authentifié est ////récupéré.
 res.json({data:product})
 }
 //Create a Product 
