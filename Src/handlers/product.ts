@@ -4,7 +4,7 @@ import prisma from "../db";
 export const getProducts = async(req,res)=>{
     const User = await prisma.user.findUnique({
         where:{
-            Id:req.User.Id
+            Id:req.user.Id
         },
         include:{
             Products:true,
