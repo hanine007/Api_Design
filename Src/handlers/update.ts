@@ -21,7 +21,7 @@ export const getUpdates=async (req,res)=>{
         }
     })
     //concatènation de tous les updates des product avec acces vers elle product.update
-    //tout les produit de user avec ces updates vers une seul liste 
+    //tout les produit de user avec ces updates vers une seul liste contenant les update 
     const updates = products.reduce((allUpdates, product) => {
         return [...allUpdates, ...product.Update]
       }, [])
@@ -103,7 +103,7 @@ export const deleteUpdate =async (req,res)=>{
     if(!match){
         return res.json ({message:'non dosent exist'})
     }
-    
+
 const deleted= await prisma.update.delete({
     where:{
         Id:req.params.Id
