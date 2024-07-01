@@ -10,6 +10,10 @@ Design and build APIs from the ground up in Node.js!We  Use Express to handle ro
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Development Mode](#development-mode)
+  - [Local](#local)
+  - [Testing](#testing)
+  - [Production](#production)
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
 - [Database](#database)
@@ -56,7 +60,7 @@ List of technologies and tools used in the project:
    $ npm install
    ```
 
-## Usage
+## Local
 
 
 
@@ -64,8 +68,15 @@ List of technologies and tools used in the project:
 $ npm run dev
 ```
 
+## Production 
 
-
+```bash
+$ STAGE=production npm run dev
+```
+## Testing 
+```bash
+$ STAGE=testing npm run dev
+```
 ## Authentication
 
 authentication is handled in this project:
@@ -92,6 +103,10 @@ Provide an overview of your database schema if necessary.
 - Logs are output to the console in a specified format.
 
 
+
+
+## License
+ MIT License
 
 
 
