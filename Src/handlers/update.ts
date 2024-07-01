@@ -27,7 +27,7 @@ export const getUpdates=async (req,res)=>{
       res.json({data: updates})
 }
 
-//update
+//Create 
 export const CreateUpdate =async(req,res)=>{
     //verfiy the product exist 
     const product= await prisma.product.findUnique({
@@ -46,4 +46,36 @@ export const CreateUpdate =async(req,res)=>{
     })
     res.json ({data :update})
 
+}
+//UPdate
+export const Updateupdate= async (req,res)=>{
+    //trouver touts les produis de l'user avec ces updates
+    const products = await prisma.product.findMany({
+        where:{
+            belongsToId:req.user.Id
+
+        },
+        include:{
+            Update:true
+        }
+    })
+    //Collecte de Toutes les Mises à Jour en une seul liste
+    const updates= products.reduce((allproducts,product)=>{
+        return[...allproducts,...product.Update]
+    },[])
+    //verification qu'elle match et existe
+    // find first in updates the upadte objetc where id===id
+    const match = updates.find(update=>update.Id===req.params.Id)
+    if(!match){
+        return res.json ({message:'non dosent exist'})
+    }
+
+
+    const updatedupdate= await prisma.update.update({
+        where:{
+            Id:req.params.Id
+        },
+        data:req.body
+    })
+    res.json({data:updatedupdate})
 }
