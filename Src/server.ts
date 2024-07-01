@@ -22,7 +22,7 @@ app.use('/api',protect,router)
 app.post('/user',CreateNewUser)
 app.post('/signin',signin)
 
-
+//the eroor handlers comme after all the routes handlers
 app.use((err, req, res, next) => {
     if(err.type==='auth'){
         res.status(401).json({message:'unauthorizd'})
