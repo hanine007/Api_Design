@@ -3,7 +3,7 @@ import {body,  oneOf, validationResult } from 'express-validator'
 import { handleInputEroor } from './modules/handdler'
 import { version } from 'os'
 import { Createproduct, deleteproduct, getProducts, getone } from './handlers/product'
-import { getOneupdate, getUpdates } from './handlers/update'
+import { CreateUpdate, Updateupdate, deleteUpdate, getOneupdate, getUpdates } from './handlers/update'
 const router =Router()
 //Product 
 router.get ('/product',getProducts,(req,res)=>{
@@ -46,21 +46,23 @@ router.delete("/update/:id", (req, res) => {});
 
 
 //UpdatePoint
-router.get("/updatepoint", (req, res) => {});
+router.get("/updatepoint", getUpdates,(req, res) => {});
 
-router.get("/updatepoint/:id", (req, res) => {});
+router.get("/updatepoint/:id", getOneupdate,(req, res) => {});
 
 router.post("/updatepoint",
 body('name').optional().isString(),
 body('description').optional().isString(),
 body ('UpadateId').exists().isString(),
+CreateUpdate,
 (req, res) => {});
 
 router.put("/updatepoint/:id", 
 body('name').optional().isString(),
 body('description').optional().isString(),
+Updateupdate,
 (req, res) => {});
 
-router.delete("/updatepoint/:id", (req, res) => {});
+router.delete("/updatepoint/:id", deleteUpdate,(req, res) => {});
 
 export default router;
