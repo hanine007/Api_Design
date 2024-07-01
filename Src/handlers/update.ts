@@ -81,3 +81,36 @@ export const Updateupdate= async (req,res)=>{
     })
     res.json({data:updatedupdate})
 }
+//Delete Update 
+export const deleteUpdate =async (req,res)=>{
+    //trouver touts les produis de l'user avec ces updates
+    const products = await prisma.product.findMany({
+        where:{
+            belongsToId:req.user.Id
+
+        },
+        include:{
+            Update:true
+        }
+    })
+    //Collecte de Toutes les Mises à Jour en une seul liste avce la concatènation 
+    const updates= products.reduce((allproducts,product)=>{
+        return[...allproducts,...product.Update]
+    },[])
+    //verification qu'elle match et existe
+    // find first in updates the upadte objetc where id===id
+    const match = updates.find(Update=>Update.Id===req.params.Id)
+    if(!match){
+        return res.json ({message:'non dosent exist'})
+    }
+    
+const deleted= await prisma.update.delete({
+    where:{
+        Id:req.params.Id
+    }
+})
+res.json ({data:'deleted'})
+
+
+
+}
