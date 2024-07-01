@@ -20,6 +20,7 @@ export const getUpdates=async (req,res)=>{
             Update:true
         }
     })
+    //concatènation de tous les updates des product avec acces vers elle product.update
     const updates = products.reduce((allUpdates, product) => {
         return [...allUpdates, ...product.Update]
       }, [])
@@ -59,18 +60,18 @@ export const Updateupdate= async (req,res)=>{
             Update:true
         }
     })
-    //Collecte de Toutes les Mises à Jour en une seul liste
+    //Collecte de Toutes les Mises à Jour en une seul liste avce la concatènation 
     const updates= products.reduce((allproducts,product)=>{
         return[...allproducts,...product.Update]
     },[])
     //verification qu'elle match et existe
     // find first in updates the upadte objetc where id===id
-    const match = updates.find(update=>update.Id===req.params.Id)
+    const match = updates.find(Update=>Update.Id===req.params.Id)
     if(!match){
         return res.json ({message:'non dosent exist'})
     }
 
-
+//Now update theme after all the verification for this 
     const updatedupdate= await prisma.update.update({
         where:{
             Id:req.params.Id
