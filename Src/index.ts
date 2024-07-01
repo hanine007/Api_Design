@@ -14,9 +14,15 @@ server.listen(3001, () => {
    
    
 //const app = require('./server');
+
 import app from './server'
 import * as dotenv from 'dotenv'
 dotenv.config()
-app.listen(3001, () => {
-    console.log('hello from the server on 3001 http://localhost:3001');
+import Config from './Config ';
+app.listen(Config.port, //3001
+    () => {
+    
+    //console.log('hello from the server on 3001 http://localhost:3001');
+    console.log(`hellpo from ${Config.port}`  );
+
 });
