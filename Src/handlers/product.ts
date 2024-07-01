@@ -8,7 +8,7 @@ export const getProducts = async(req,res)=>{
         },
         include:{
             Products:true,
-        }
+        }// récupérer tout les produits de user
     })
     //Renvoyer tous les produits a l'utilisateur 
     res.json({ data: User.Products }); 
@@ -21,7 +21,7 @@ const product = await prisma.product.findFirst({
         Id,
         belongsToId: req.user.Id
     }
-});
+});//Cela assure que seul le produit //appartenant à l'utilisateur authentifié est ////récupéré.
 res.json({data:product})
 }
 //Create a Product 
