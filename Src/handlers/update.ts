@@ -34,7 +34,7 @@ export const CreateUpdate =async(req,res)=>{
     //verfiy the product exist 
     const product= await prisma.product.findUnique({
         where:{
-            Id:req.body.Id
+            Id:req.body.ProductId
         }
 
     })
