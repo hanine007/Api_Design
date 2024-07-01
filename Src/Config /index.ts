@@ -7,10 +7,10 @@ if (stage==='production')
 envConf= require('./prod').default
     }
     else if(stage==='testing') {
-        envConf= require('./testing')
+        envConf= require('./testing').default
     }
     else {
-        envConf=require('./local')
+        envConf=require('./local').default
     }
 
     export default merge({
