@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node Src/index.ts"
+    "dev": "ts-node Src/index.ts",
+    "prod":"STAGE=production npm run dev",
+    "testing":"STAGE=testing npm run dev"
   },
   "keywords": [],
   "author": "",
