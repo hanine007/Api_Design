@@ -24,8 +24,15 @@ app.post('/signin',signin)
 
 
 app.use((err, req, res, next) => {
-    console.log(err)
-    res.json({message: `had an error: ${err.message}`})
+    if(err.type==='auth'){
+        res.status(401).json({message:'unauthorizd'})
+    }
+    else if (err.type==='input ') {
+        res.status(400).json({message:'invalid'})
+    }
+    else{
+        res.status(500).json({message:'unauthorized'})
+    }
   })
 
 
