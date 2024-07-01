@@ -71,11 +71,12 @@ $ npm run dev
 ## Production 
 
 ```bash
-$ STAGE=production npm run dev
+$  npm run prod
 ```
 ## Testing 
 ```bash
-$ STAGE=testing npm run dev
+$  npm run testing
+
 ```
 ## Authentication
 
