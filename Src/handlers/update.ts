@@ -21,6 +21,7 @@ export const getUpdates=async (req,res)=>{
         }
     })
     //concatènation de tous les updates des product avec acces vers elle product.update
+    //tout les produit de user avec ces updates vers une seul liste 
     const updates = products.reduce((allUpdates, product) => {
         return [...allUpdates, ...product.Update]
       }, [])
