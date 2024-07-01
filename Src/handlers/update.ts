@@ -26,3 +26,24 @@ export const getUpdates=async (req,res)=>{
     
       res.json({data: updates})
 }
+
+//update
+export const CreateUpdate =async(req,res)=>{
+    //verfiy the product exist 
+    const product= await prisma.product.findUnique({
+        where:{
+            Id:req.body.Id
+        }
+
+    })
+
+    if (!product){
+         return res.json({massage:'nop product '})
+    }
+
+    const update=await prisma.update.create({
+        data:req.body
+    })
+    res.json ({data :update})
+
+}
