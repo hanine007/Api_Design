@@ -33,6 +33,7 @@ router.get("/update/:id",getOneupdate,
 router.post("/update", 
 body('title').exists().isString(),
 body('body').exists().isString(),
+body('ProductId').exists().isString(),
 (req, res) => {});
 
 router.put("/update/:id", 
