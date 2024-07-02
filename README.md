@@ -17,6 +17,7 @@ Design and build APIs from the ground up in Node.js!We  Use Express to handle ro
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
 - [Database](#database)
+- [Test](#Test)
 - [Logging](#logging)
 - [Styling](#styling)
 - [Contributing](#contributing)
@@ -95,6 +96,12 @@ Include any relevant code snippets or configuration details.
 - Database schema defined in `schema.prisma`.
 
 Provide an overview of your database schema if necessary.
+
+## Test 
+```bash
+$  npm test
+
+```
 
 ## Logging
 
