@@ -99,6 +99,10 @@ Provide an overview of your database schema if necessary.
 
 ## Test 
 Unit tests are written using Jest. Unit tests focus on testing individual functions or modules in isolation.
+
+Integration tests are written using Supertest and Jest. Integration tests focus on testing how different parts of the application work together, such as testing API endpoints.
+
+
 ```bash
 $  npm test
 
