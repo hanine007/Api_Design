@@ -98,6 +98,7 @@ Include any relevant code snippets or configuration details.
 Provide an overview of your database schema if necessary.
 
 ## Test 
+Unit tests are written using Jest. Unit tests focus on testing individual functions or modules in isolation.
 ```bash
 $  npm test
 
