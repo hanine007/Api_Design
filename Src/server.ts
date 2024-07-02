@@ -15,7 +15,8 @@ app.get('/', (req, res, next) => {
     setTimeout(() => {
       next(new Error('hello'))
     },1)
-  })
+    //res.json ({message:'hello'})  for the supertest 
+})
 //
 app.use('/api',protect,router)
 // Create and sigin
