@@ -22,7 +22,7 @@ Design and build APIs from the ground up in Node.js!We  Use Express to handle ro
 - [Styling](#styling)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
+
 
 ## Introduction
 
