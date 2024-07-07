@@ -1,6 +1,6 @@
 # Api_Design
 
-Design and build APIs from the ground up in Node.js!We  Use Express to handle routes and create your REST API. You'll read and update from a Postgres database using Prisma and TypeScript. Then add authentication to lock down your API with JWTs
+Design and build APIs from the ground up in Node.js!We  Use Express to handle routes and create your REST API. You'll read and update from a Postgres database using Prisma and TypeScript. Then add authentication to lock down your API with JWTs.
 
 ## Table of Contents
 
