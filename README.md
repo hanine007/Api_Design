@@ -1,3 +1,13 @@
+
+![Node.js](https://img.shields.io/badge/Node.js-18.0-green)
+![Express.js](https://img.shields.io/badge/Express.js-Framework-blue)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-lightblue)
+![JWT](https://img.shields.io/badge/JWT-Authentication-yellow)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.0-blue)
+![Jest](https://img.shields.io/badge/Jest-Testing-red)
+![Supertest](https://img.shields.io/badge/Supertest-Integration%20Testing-orange)
+![Morgan](https://img.shields.io/badge/Morgan-Logging-orange)
 # Api_Design
 
 Design and build APIs from the ground up in Node.js!We  Use Express to handle routes and create your REST API. You'll read and update from a Postgres database using Prisma and TypeScript. Then add authentication to lock down your API with JWTs.
